@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {fetchProductos} from '../actions/index';
 import {bindActionCreators} from 'redux';
 import ProductListing from './product_listing';
-
+import Navegacion from '../components/navegacion';
 
 class MainContent extends Component{
     constructor(props){
@@ -25,13 +25,19 @@ class MainContent extends Component{
     render(){
         //console.log(this.props);
         return(
-            <div className="row justify-content-center">
-                <div className="container">
-                    <h2 className="text-center">Nuestros Productos</h2>
-                    <div className="row">
-                        <div className="container">
-                            {/* <button type="button" onClick={this.onFetchData}>Click me</button> */}
-                            <ProductListing />
+            <div>
+                <div className="row justify-content-center">
+                    <div className="container">
+                        <h2 className="text-center">Nuestros Productos</h2>
+                        <br/>
+                        <div className="row justify-content-center">
+                            <Navegacion/>
+                        </div>
+                        <div className="row">
+                            <div className="container">
+                                {/* <button type="button" onClick={this.onFetchData}>Click me</button> */}
+                                <ProductListing />
+                            </div>
                         </div>
                     </div>
                 </div>
