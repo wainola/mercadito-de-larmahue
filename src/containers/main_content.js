@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchProductos} from '../actions/index';
 import {bindActionCreators} from 'redux';
-import axios from 'axios';
+import ProductListing from './product_listing';
 
 
 class MainContent extends Component{
@@ -13,23 +13,25 @@ class MainContent extends Component{
         };
         this.onFetchData = this.onFetchData.bind(this);
     }
-    onFetchData(event){
+    componentDidMount(){
+        this.onFetchData();
+    }
+    onFetchData(){
         // This execute the action.
         // We have mapped the new state that is returned after the actions executes.
         // in the render we get the new state
         this.props.fetchProductos();
     }
     render(){
-        console.log("PROPS");
-        console.log(this.props.productos);
+        //console.log(this.props);
         return(
             <div className="row justify-content-center">
                 <div className="container">
                     <h2 className="text-center">Nuestros Productos</h2>
                     <div className="row">
                         <div className="container">
-                            Productos 1
-                            <button type="button" onClick={this.onFetchData}>Click me</button>
+                            {/* <button type="button" onClick={this.onFetchData}>Click me</button> */}
+                            <ProductListing />
                         </div>
                     </div>
                 </div>
@@ -39,9 +41,7 @@ class MainContent extends Component{
 }
 
 function mapStateToProps({productos}){
-    console.log("productos");
-    console.log(productos);
-    return { productos: productos[0] }; // { productos } === {productos:productos}
+    return {productos}; // { productos } === {productos:productos}
 }
 
 function mapDispatchToProps(dispatch){
