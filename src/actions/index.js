@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const FETCH_DATA = 'FETCH_DATA';
+export const ADD_TO_CART = 'ADD_TO_CART';
 
 export function fetchProductos(){
     const url = `http://localhost:3000/data/data_productos.json`;
@@ -9,4 +10,8 @@ export function fetchProductos(){
         type: FETCH_DATA,
         payload: request
     }
+}
+
+export function addToCart(){
+    
 }

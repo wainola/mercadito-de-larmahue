@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import ModalProducto from './modal';
+import {Button} from 'reactstrap';
 
 class ProductListing extends Component{
     constructor(props){
@@ -16,7 +18,7 @@ class ProductListing extends Component{
         console.log("Render de productos");
         let c = 1;
         return(
-            <div className="card border-info" style={{ width: "20rem", marginLeft: "10px", marginBottom: "10px"}} key={productos.id}>
+            <div className="card border-info" style={{ width: "15rem", marginLeft: "10px", marginBottom: "10px"}} key={productos.id}>
                 <img className="img-fluid" src="./productos/cebolla.png" alt="Card image cap" />
                 <div className="card-body">
                     <h4 className="card-title">{productos.product_name}</h4>
@@ -40,9 +42,10 @@ class ProductListing extends Component{
                             </select>
                         </div>
                         </div>
-                        
+                        <div className="form-group">
+                            <Button className="btn btn-info">Añadir al Carrito</Button>
+                        </div>
                     </div>
-                    <a href="#" className="btn btn-info">Pedir</a>
                 </div>
             </div>
         );
