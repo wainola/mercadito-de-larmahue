@@ -19,7 +19,7 @@ class ModalProducto extends Component {
   }
 
   render() {
-    console.log(this.state.modal);
+    //console.log(this.state.modal);
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>Pedir</Button>

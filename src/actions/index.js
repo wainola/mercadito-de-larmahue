@@ -12,6 +12,9 @@ export function fetchProductos(){
     }
 }
 
-export function addToCart(){
-    
+export function addToCart(producto){
+    return{
+        type: ADD_TO_CART,
+        payload: producto
+    }
 }

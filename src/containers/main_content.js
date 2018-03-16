@@ -4,6 +4,7 @@ import {fetchProductos} from '../actions/index';
 import {bindActionCreators} from 'redux';
 import ProductListing from './product_listing';
 import Navegacion from '../components/navegacion';
+import CarroCompra from '../containers/carro_de_compras';
 
 class MainContent extends Component{
     constructor(props){
@@ -28,6 +29,7 @@ class MainContent extends Component{
             <div>
                 <div className="row justify-content-center">
                     <div className="container">
+                        <CarroCompra/>
                         <h2 className="text-center">Nuestros Productos</h2>
                         <br/>
                         <div className="row justify-content-center">
