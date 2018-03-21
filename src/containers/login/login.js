@@ -28,13 +28,21 @@ class Login extends Component{
             </div>
         );
     }
+    // THIS METHOD POST TO THE SERVER
+    onSubmit(values){
+
+    }
     render(){
+
+        // HANDLESUBMIT ITS A PROPS OF THE REDUX-FORM
+        const {handleSubmit} = this.props;
+        console.log(this.props);
         return(
             <div className="row justify-content-center login">
                 <div className="card">
                     <div className="card-body">
                         <h3>Log in</h3>
-                        <form>
+                        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                             <Field
                                 label="Usuario"
                                 name="user"
